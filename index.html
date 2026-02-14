@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentic-RAG Research Hub</title>
     <style>
+        .survey-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 210, 255, 0.3);
+            border-top: 3px solid var(--primary);
+        }
+
+        .survey-card h2 {
+            margin-top: 0;
+            border-bottom: none;
+            background: linear-gradient(to right, #ffffff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white !important;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+            filter: brightness(1.1);
+        }
         :root {
             --primary: #00d2ff;
             --secondary: #3a7bd5;
@@ -87,6 +126,14 @@
 
     <div class="container">
         <h1>Agentic-RAG Research</h1>
+        <div class="survey-card">
+            <h2><span class="section-icon">📜</span> SURVEY PAPER</h2>
+            <p style="font-style: italic; color: #cbd5e1;">The central research of this project: Comparative Analysis of Agentic-RAG Methodologies.</p>
+        
+            <a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" class="btn-main" target="_blank">
+                READ THE FULL PAPER
+            </a>
+        </div>
         
         <h2><span class="section-icon">📊</span> Analysis</h2>
         <ul>
