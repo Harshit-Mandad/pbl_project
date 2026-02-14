@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Project</title>
+    <title>Agentic-RAG Research Hub</title>
     <style>
         :root {
             --primary: #00d2ff;
@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 40px 20px;
@@ -31,12 +31,12 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
         }
 
         h2 {
@@ -44,6 +44,9 @@
             padding-bottom: 10px;
             margin-top: 40px;
             color: var(--primary);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         ul {
@@ -53,62 +56,64 @@
 
         li {
             background: var(--card-bg);
-            margin: 10px 0;
-            padding: 15px;
+            margin: 12px 0;
+            padding: 0; /* Changed to 0 so the link covers the whole area */
             border-radius: 8px;
-            transition: transform 0.2s, border-left 0.2s;
-            border-left: 4px solid transparent;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 4px solid var(--secondary);
         }
 
         li:hover {
-            transform: translateX(10px);
-            border-left: 4px solid var(--primary);
+            transform: translateX(8px);
             background: #2d3748;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-left: 4px solid var(--primary);
         }
 
         a {
             color: var(--text);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             display: block;
+            padding: 15px 20px; /* Padding moved here for better clickability */
         }
 
-        code {
-            background: #334155;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: var(--primary);
+        .section-icon {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to My Project</h1>
-    <p>This page is hosted directly from my GitHub repository!</p>
-    <h2>Project Assets</h2>
-    <ul>
-        <li>
-            <a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" target="_blank">Comparative Analysis of Agentic-RAG Methodologies</a>
-        </li>
+    <div class="container">
+        <h1>Agentic-RAG Research</h1>
+        
+        <h2><span class="section-icon">📊</span> Analysis</h2>
+        <ul>
+            <li><a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" target="_blank">Comparative Analysis of Agentic-RAG Methodologies (PDF)</a></li>
+            <li><a href="Comparative Anaylsis of Retrieval Methodology.png" target="_blank">Retrieval Methodology Analysis</a></li>
+            <li><a href="Critical Research Gaps.png" target="_blank">Critical Research Gaps Chart</a></li>
+        </ul>
 
-        <li><a href="Agentic-RAG+Reinforced Learning.drawio.png" target="_blank">Agentic-RAG + Reinforced Learning Flow</a></li>
-        <li><a href="Comparative Anaylsis of Retrieval Methodology.png" target="_blank">Retrieval Methodology Analysis</a></li>
-        <li><a href="Critical Research Gaps.png" target="_blank">Critical Research Gaps Chart</a></li>
-        <li><a href="Flowchart - 1.drawio.png" target="_blank">Flowchart 1</a></li>
-        <li><a href="Flowchart - 2.drawio.png" target="_blank">Flowchart 2</a></li>
-        <li><a href="Flowchart - 3.drawio.png" target="_blank">Flowchart 3</a></li>
-        <li><a href="RAG Basic Components.drawio.png" target="_blank">RAG Basic Components</a></li>
-        <li><a href="Reinforcement Learning Framework.drawio.png" target="_blank">Reinforcement Learning Framework</a></li>
-    </ul>
-    
-    <h2>About This Page</h2>
-    <p>You can edit this text inside the <code>&lt;p&gt;</code> tags in your index.html file.</p>
+        <h2><span class="section-icon">🔄</span> Flowcharts</h2>
+        <ul>
+            <li><a href="Flowchart - 1.drawio.png" target="_blank">Flowchart 1</a></li>
+            <li><a href="Flowchart - 2.drawio.png" target="_blank">Flowchart 2</a></li>
+            <li><a href="Flowchart - 3.drawio.png" target="_blank">Flowchart 3</a></li>
+            <li><a href="Agentic-RAG+Reinforced Learning.drawio.png" target="_blank">Agentic-RAG + Reinforced Learning Flow</a></li>
+        </ul>
 
-    <ul>
-        <li>First feature</li>
-        <li>Second feature</li>
-        <li>Third feature</li>
-    </ul>
+        <h2><span class="section-icon">📐</span> Diagrams</h2>
+        <ul>
+            <li><a href="RAG Basic Components.drawio.png" target="_blank">RAG Basic Components</a></li>
+            <li><a href="Reinforcement Learning Framework.drawio.png" target="_blank">Reinforcement Learning Framework</a></li>
+        </ul>
+
+        <hr style="margin-top: 50px; border: 0; border-top: 1px solid var(--card-bg);">
+        <p style="text-align: center; opacity: 0.6; font-size: 0.9rem;">
+            Hosted on GitHub Pages • 2026 Agentic-RAG Project
+        </p>
+    </div>
 
 </body>
 </html>
