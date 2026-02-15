@@ -11,13 +11,15 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
-            padding: 30px;
+            padding: 30px 20px;
             margin: 40px 0;
             text-align: center;
             box-shadow: 0 8px 32px 0 rgba(0, 210, 255, 0.3);
             border-top: 3px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
         .survey-card h2 {
             margin-top: 0;
             border-bottom: none;
@@ -31,12 +33,17 @@
             display: inline-block;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white !important;
-            padding: 15px 40px;
+            padding: 12px 35px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+            text-decoration: none;
+            max-width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
+            cursor: pointer;
         }
 
         .btn-main:hover {
@@ -124,16 +131,18 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Agentic-RAG Survey</h1>
-        <div class="survey-card">
-            <h2><span class="section-icon">📜</span> SURVEY PAPER</h2>
-            <p style="font-style: italic; color: #cbd5e1;">The Central Research of this Project: Comparative Analysis of Agentic-RAG Methodologies + Study on RL-RAG Methodology.</p>
-        
+    <div class="survey-card">
+        <h2><span class="section-icon">📜</span> SURVEY PAPER</h2>
+        <p style="font-style: italic; color: #cbd5e1; margin-bottom: 10px;">
+            The Central Research of this Project: Comparative Analysis of Agentic-RAG Methodologies + Study on RL-RAG Methodology
+        </p>
+
+        <div style="width: 100%;">
             <a href="#" class="btn-main" onclick="alert('Coming Soon!'); return false;">
                VIEW
             </a>
         </div>
+    </div>
         
         <h2><span class="section-icon">📊</span> Analysis</h2>
         <ul>
