@@ -18,4 +18,5 @@ Welcome to the central repository for my research on **Agentic Retrieval-Augment
 * **Google Sheets:** Creation of Organized Tabular data 
 
 ## ✍️ Author
-* **Harshit Mandad** - *Lead Researcher*
+* **MR. HARSHIT MANDAD** - *Lead Researcher*
+* **DR. LAV UPADHYAY** - *Mentor*
