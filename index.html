@@ -4,176 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentic-RAG Research Hub</title>
+
     <style>
-        /* Background canvas */
-        #ai-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-/* Optional glow overlay */
-        body::before {
-            content: "";
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(0,210,255,0.15), transparent 40%),
-                        radial-gradient(circle at 80% 70%, rgba(58,123,213,0.15), transparent 40%);
-            z-index: -1;
-        }
-      
-        .section-icon {
-            margin-right: 10px;
-            transition: 0.3s;
-        }
-
-        .survey-card:hover .section-icon,
-        .grid-card:hover h3 {
-            text-shadow: 0 0 10px var(--primary),
-                     0 0 20px var(--primary),
-                     0 0 30px var(--secondary);
-        }
-
-
-        .btn-main {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-main::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-main:hover::before {
-            left: 100%;
-        }
-
-
-        .grid-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            width: 100%;
-            margin-top: 30px;
-        }
-
-        .grid-card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid var(--secondary);
-            transition: 0.3s;
-        }
-
-        .grid-card:hover {
-            transform: translateY(-5px);
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .grid-card h3 {
-            margin-top: 0;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .grid-card ul {
-            padding: 0;
-        }
-
-        .grid-card li {
-            background: transparent;
-            border: none;
-            margin: 8px 0;
-        }
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            width: 100%;
-            margin: 30px 0;
-        }
-
-        .stat-box {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stat-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0,210,255,0.4);
-        }
-
-        .stat-box h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin: 0;
-        }
-        .survey-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 30px 20px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 210, 255, 0.3);
-            border-top: 3px solid var(--primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .survey-card h2 {
-            margin-top: 0;
-            border-bottom: none;
-            background: linear-gradient(to right, #ffffff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2rem;
-        }
-
-        .btn-main {
-            display: inline-block;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white !important;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
-            text-decoration: none;
-            max-width: 100%;
-            box-sizing: border-box;
-            white-space: nowrap;
-            cursor: pointer;
-        }
-
-        .btn-main:hover {
-            transform: scale(1.05) !important;
-            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
-            filter: brightness(1.1);
-        }
         :root {
             --primary: #00d2ff;
             --secondary: #3a7bd5;
@@ -184,39 +16,40 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 40px 20px;
             background-color: var(--bg);
             color: var(--text);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-        
 
         .container {
-            max-width: 800px;
-            width: 100%;
+            max-width: 900px;
+            margin: auto;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .survey-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 210, 255, 0.3);
+            margin-bottom: 40px;
         }
 
         h2 {
-            border-bottom: 2px solid var(--card-bg);
-            padding-bottom: 10px;
-            margin-top: 40px;
             color: var(--primary);
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            margin-top: 40px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
         }
 
         ul {
@@ -226,205 +59,101 @@
 
         li {
             background: var(--card-bg);
-            margin: 12px 0;
-            padding: 0; /* Changed to 0 so the link covers the whole area */
+            margin: 10px 0;
             border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-left: 4px solid var(--secondary);
-        }
-
-        li:hover {
-            transform: translateX(8px);
-            background: #2d3748;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            border-left: 4px solid var(--primary);
         }
 
         a {
+            display: block;
+            padding: 15px;
             color: var(--text);
             text-decoration: none;
-            font-weight: 500;
-            display: block;
-            padding: 15px 20px; /* Padding moved here for better clickability */
         }
 
-        .section-icon {
-            margin-right: 10px;
+        li:hover {
+            background: #2d3748;
+        }
+
+        /* GRID */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
+
 <body>
-    <canvas id="ai-bg"></canvas>
 
-    <div class="survey-card"> 
-        <h2><span class="section-icon">📜</span> SURVEY PAPER</h2> 
+<div class="container">
 
-        <p style="font-style: italic; color: #cbd5e1; margin-bottom: 10px;">
-            Central Goal : Survey on Agentic-RAG Methodologies
-        </p> 
+    <!-- 📜 SURVEY -->
+    <div class="survey-card">
+        <h2>📜 SURVEY PAPER</h2>
 
-        <div style="width: 100%;"> 
-            <a href="Agentic-RAG Survey Paper.pdf" target="_blank" class="btn-main">
-                VIEW
-            </a> 
-        </div> 
+        <p style="color:#cbd5e1;">
+            Central Goal: Survey on Agentic-RAG Methodologies
+        </p>
+
+        <!-- 👉 IMPORTANT: Put your PDF name here -->
+        <a href="survey-paper.pdf" target="_blank" class="btn-main">
+            VIEW
+        </a>
     </div>
 
-    </div>  
+    <!-- 📦 GRID SECTIONS -->
+    <div class="grid-container">
 
-<!-- ✅ ADD STATS HERE -->
-<div class="stats-container">
+        <div class="grid-card">
+            <h2>📊 Analysis</h2>
+            <ul>
+                <li><a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" target="_blank">Comparative Analysis</a></li>
+                <li><a href="Comparative Anaylsis of Retrieval Methodology.png" target="_blank">Retrieval Methodology</a></li>
+                <li><a href="Common.png" target="_blank">Research Gaps</a></li>
+            </ul>
+        </div>
 
-    <div class="stat-box">
-        <h2 class="counter" data-target="25">0</h2>
-        <p>Papers Reviewed</p>
-    </div>
+        <div class="grid-card">
+            <h2>🔄 Flowcharts</h2>
+            <ul>
+                <li><a href="Flowchart - 1.drawio.png" target="_blank">Flowchart 1</a></li>
+                <li><a href="Flowchart - 2.drawio.png" target="_blank">Flowchart 2</a></li>
+                <li><a href="Flowchart - 3.drawio.png" target="_blank">Flowchart 3</a></li>
+            </ul>
+        </div>
 
-    <div class="stat-box">
-        <h2 class="counter" data-target="12">0</h2>
-        <p>Methods Compared</p>
-    </div>
+        <div class="grid-card">
+            <h2>📐 Diagrams</h2>
+            <ul>
+                <li><a href="RAG Basic Components.drawio.png" target="_blank">RAG Components</a></li>
+                <li><a href="Reinforcement Learning Framework.drawio.png" target="_blank">RL Framework</a></li>
+            </ul>
+        </div>
 
-    <div class="stat-box">
-        <h2 class="counter" data-target="5">0</h2>
-        <p>Key Insights</p>
-    </div>
+        <div class="grid-card">
+            <h2>💻 Presentation</h2>
+            <ul>
+                <li><a href="Agentic Retrieval-Augmented Generation A Comparative Survey.pdf" target="_blank">Final PPT</a></li>
+            </ul>
+        </div>
 
-    <div class="stat-box">
-        <h2 class="counter" data-target="3">0</h2>
-        <p>Frameworks Designed</p>
-    </div>
+        <div class="grid-card">
+            <h2>📂 Dataset</h2>
+            <ul>
+                <li><a href="Literature Dataset.pdf" target="_blank">Literature Dataset</a></li>
+                <li><a href="Analytical Dataset Summary.pdf" target="_blank">Dataset Summary</a></li>
+            </ul>
+        </div>
 
-</div>
-
-<!-- THEN your grid sections continue -->
-        
-<div class="grid-container">
-
-    <div class="grid-card">
-        <h3>📊 Analysis</h3>
-        <ul>
-            <li><a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" target="_blank">Comparative Analysis</a></li>
-            <li><a href="Comparative Anaylsis of Retrieval Methodology.png" target="_blank">Retrieval Methodology</a></li>
-            <li><a href="Common.png" target="_blank">Research Gaps</a></li>
-        </ul>
-    </div>
-
-    <div class="grid-card">
-        <h3>🔄 Flowcharts</h3>
-        <ul>
-            <li><a href="Flowchart - 1.drawio.png" target="_blank">Flowchart 1</a></li>
-            <li><a href="Flowchart - 2.drawio.png" target="_blank">Flowchart 2</a></li>
-            <li><a href="Flowchart - 3.drawio.png" target="_blank">Flowchart 3</a></li>
-            <li><a href="Agentic-RAG+Reinforced Learning.drawio.png" target="_blank">RL Flow</a></li>
-        </ul>
-    </div>
-
-    <div class="grid-card">
-        <h3>📐 Diagrams</h3>
-        <ul>
-            <li><a href="RAG Basic Components.drawio.png" target="_blank">RAG Components</a></li>
-            <li><a href="Reinforcement Learning Framework.drawio.png" target="_blank">RL Framework</a></li>
-        </ul>
-    </div>
-
-    <div class="grid-card">
-        <h3>💻 Presentation</h3>
-        <ul>
-            <li><a href="Agentic Retrieval-Augmented Generation A Comparative Survey.pdf" target="_blank">Final PPT</a></li>
-        </ul>
-    </div>
-
-    <div class="grid-card">
-        <h3>📂 Dataset</h3>
-        <ul>
-            <li><a href="Literature Dataset.pdf" target="_blank">Literature Dataset</a></li>
-            <li><a href="Analytical Dataset Summary.pdf" target="_blank">Dataset Summary</a></li>
-        </ul>
     </div>
 
 </div>
-
-<script>
-const counters = document.querySelectorAll('.counter');
-
-counters.forEach(counter => {
-    counter.innerText = '0';
-
-    const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText;
-
-        const increment = target / 50;
-
-        if (current < target) {
-            counter.innerText = Math.ceil(current + increment);
-            setTimeout(updateCounter, 30);
-        } else {
-            counter.innerText = target;
-        }
-    };
-
-    updateCounter();
-});
-</script>
-
-<script>
-const canvas = document.getElementById("ai-bg");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for (let i = 0; i < 80; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        dx: (Math.random() - 0.5) * 1,
-        dy: (Math.random() - 0.5) * 1
-    });
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-
-        // draw particle
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "#00d2ff";
-        ctx.fill();
-
-        // connect lines
-        particles.forEach(p2 => {
-            let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-            if (dist < 120) {
-                ctx.beginPath();
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = "rgba(0,210,255,0.1)";
-                ctx.stroke();
-            }
-        });
-    });
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-// Resize fix
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-</script>
-    
 
 </body>
 </html>
