@@ -133,16 +133,31 @@
 
     <div class="survey-card">
         <h2><span class="section-icon">📜</span> SURVEY PAPER</h2>
+
         <p style="font-style: italic; color: #cbd5e1; margin-bottom: 10px;">
-            The Central Research of this Project: Comparative Analysis of Agentic-RAG Methodologies + Study on RL-RAG Methodology
+            Central Goal: Survey on Agentic-RAG Methodologies 
         </p>
 
+        <!-- Button -->
         <div style="width: 100%;">
-            <a href="#" class="btn-main" onclick="alert('Coming Soon!'); return false;">
-               VIEW
+            <a href="assets/survey-paper.pdf" target="_blank" class="btn-main">
+                VIEW
             </a>
-        </div>
-    </div>
+
+        <div id="paperViewer" style="margin-top:20px;"></div>
+
+        <script>
+        function viewPaper() {
+            document.getElementById("paperViewer").innerHTML = `
+                <iframe src="assets/survey-paper.pdf"
+                    width="100%"
+                    height="500px"
+                    style="border-radius:10px; border:none;">
+                </iframe>
+            `;
+        }
+        </script>
+       
         
         <h2><span class="section-icon">📊</span> Analysis</h2>
         <ul>
