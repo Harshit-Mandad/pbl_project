@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentic-RAG Research Hub</title>
     <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .grid-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary);
+            transition: 0.3s;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .grid-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .grid-card ul {
+            padding: 0;
+        }
+
+        .grid-card li {
+            background: transparent;
+            border: none;
+            margin: 8px 0;
+        }
         .survey-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(10px);
@@ -145,43 +182,51 @@
         </div> 
     </div>
         
-        <h2><span class="section-icon">📊</span> Analysis</h2>
-        <ul>
-            <li><a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" target="_blank">Comparative Analysis of Agentic-RAG Methodologies</a></li>
-            <li><a href="Comparative Anaylsis of Retrieval Methodology.png" target="_blank">Retrieval Methodology Analysis</a></li>
-            <li><a href="Common.png" target="_blank">Critical Research Gaps Chart</a></li>
-        </ul>
+<div class="grid-container">
 
-        <h2><span class="section-icon">🔄</span> Flowcharts</h2>
+    <div class="grid-card">
+        <h3>📊 Analysis</h3>
+        <ul>
+            <li><a href="Comparative Analysis of Agentic-RAG Methodologies - Sheet1.pdf" target="_blank">Comparative Analysis</a></li>
+            <li><a href="Comparative Anaylsis of Retrieval Methodology.png" target="_blank">Retrieval Methodology</a></li>
+            <li><a href="Common.png" target="_blank">Research Gaps</a></li>
+        </ul>
+    </div>
+
+    <div class="grid-card">
+        <h3>🔄 Flowcharts</h3>
         <ul>
             <li><a href="Flowchart - 1.drawio.png" target="_blank">Flowchart 1</a></li>
             <li><a href="Flowchart - 2.drawio.png" target="_blank">Flowchart 2</a></li>
             <li><a href="Flowchart - 3.drawio.png" target="_blank">Flowchart 3</a></li>
-            <li><a href="Agentic-RAG+Reinforced Learning.drawio.png" target="_blank">Agentic-RAG + Reinforced Learning Flow</a></li>
+            <li><a href="Agentic-RAG+Reinforced Learning.drawio.png" target="_blank">RL Flow</a></li>
         </ul>
-
-        <h2><span class="section-icon">📐</span> Diagrams</h2>
-        <ul>
-            <li><a href="RAG Basic Components.drawio.png" target="_blank">RAG Basic Components</a></li>
-            <li><a href="Reinforcement Learning Framework.drawio.png" target="_blank">Reinforcement Learning Framework</a></li>
-        </ul>
-
-        <h2><span class="section-icon">💻</span> Presentation</h2>
-        <ul>
-            <li><a href="Agentic Retrieval-Augmented Generation A Comparative Survey.pdf" target="_blank">Final PPT </a></li>
-        </ul>
-
-        <h2><span class="section-icon">📂</span> Dataset</h2>
-        <ul>
-            <li><a href="Literature Dataset.pdf" target="_blank">Literature Dataset (Expanded) </a></li>
-            <li><a href="Analytical Dataset Summary.pdf" target="_blank">Analytical Dataset Summary (Simplified)</a></li>
-        </ul>
-
-        <hr style="margin-top: 50px; border: 0; border-top: 1px solid var(--card-bg);">
-        <p style="text-align: center; opacity: 0.6; font-size: 0.9rem;">
-            Hosted on GitHub Pages • 2026 Agentic-RAG Project
-        </p>
     </div>
+
+    <div class="grid-card">
+        <h3>📐 Diagrams</h3>
+        <ul>
+            <li><a href="RAG Basic Components.drawio.png" target="_blank">RAG Components</a></li>
+            <li><a href="Reinforcement Learning Framework.drawio.png" target="_blank">RL Framework</a></li>
+        </ul>
+    </div>
+
+    <div class="grid-card">
+        <h3>💻 Presentation</h3>
+        <ul>
+            <li><a href="Agentic Retrieval-Augmented Generation A Comparative Survey.pdf" target="_blank">Final PPT</a></li>
+        </ul>
+    </div>
+
+    <div class="grid-card">
+        <h3>📂 Dataset</h3>
+        <ul>
+            <li><a href="Literature Dataset.pdf" target="_blank">Literature Dataset</a></li>
+            <li><a href="Analytical Dataset Summary.pdf" target="_blank">Dataset Summary</a></li>
+        </ul>
+    </div>
+
+</div>
 
 </body>
 </html>
