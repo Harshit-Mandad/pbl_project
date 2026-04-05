@@ -6,6 +6,15 @@
 <title>Agentic-RAG Research Hub</title>
 
 <style>
+#wave-bg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    pointer-events: none;
+}
     /* AI BACKGROUND */
 #ai-bg {
     position: fixed;
@@ -101,6 +110,7 @@ a {
 
 <body>
     <canvas id="ai-bg"></canvas>
+    <canvas id="wave-bg"></canvas>
 
 <!-- 📜 SURVEY PAPER (FULL WIDTH TOP) -->
 <div class="survey-card">
@@ -302,6 +312,54 @@ window.addEventListener("resize", () => {
     canvas.height = window.innerHeight;
     textParticles = [];
     createText();
+});
+</script>
+    <script>
+const waveCanvas = document.getElementById("wave-bg");
+const wCtx = waveCanvas.getContext("2d");
+
+waveCanvas.width = window.innerWidth;
+waveCanvas.height = window.innerHeight;
+
+let t = 0;
+
+function drawWaves() {
+    wCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
+
+    for (let j = 0; j < 3; j++) {
+        wCtx.beginPath();
+
+        for (let i = 0; i < waveCanvas.width; i++) {
+            let y = waveCanvas.height * 0.7 +
+                    Math.sin(i * 0.01 + t + j) * (20 + j * 10);
+
+            wCtx.lineTo(i, y);
+        }
+
+        /* GRADIENT */
+        let gradient = wCtx.createLinearGradient(0, 0, waveCanvas.width, 0);
+        gradient.addColorStop(0, "#00d2ff");
+        gradient.addColorStop(0.5, "#3a7bd5");
+        gradient.addColorStop(1, "#00f5a0");
+
+        wCtx.strokeStyle = gradient;
+        wCtx.lineWidth = 2 + j;
+        wCtx.shadowBlur = 20;
+        wCtx.shadowColor = "#00d2ff";
+
+        wCtx.stroke();
+    }
+
+    t += 0.02;
+    requestAnimationFrame(drawWaves);
+}
+
+drawWaves();
+
+/* RESIZE FIX */
+window.addEventListener("resize", () => {
+    waveCanvas.width = window.innerWidth;
+    waveCanvas.height = window.innerHeight;
 });
 </script>
 </body>
