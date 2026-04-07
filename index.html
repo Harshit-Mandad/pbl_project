@@ -118,7 +118,7 @@ a {
     <p>Central Goal: Survey on Agentic-RAG Methodologies</p>
 
     <!-- 👉 MAKE SURE FILE NAME HAS NO SPACES -->
-    <a href="Agentic-RAG Survey Paper.pdf" target="_blank" class="btn-main">
+    <a href="Agentic-RAG Methodology Survey Paper.pdf" target="_blank" class="btn-main">
         VIEW PAPER
     </a>
 </div>
@@ -201,37 +201,6 @@ for (let i = 0; i < 80; i++) {
     });
 }
 
-/* CREATE TEXT PARTICLES */
-function createText() {
-    const tempCanvas = document.createElement("canvas");
-    const tempCtx = tempCanvas.getContext("2d");
-
-    tempCanvas.width = canvas.width;
-    tempCanvas.height = canvas.height;
-
-    tempCtx.fillStyle = "white";
-    tempCtx.font = "bold 100px Arial";
-    tempCtx.textAlign = "center";
-    tempCtx.fillText("AGENTIC-RAG", canvas.width / 2, canvas.height / 2);
-
-    const data = tempCtx.getImageData(0, 0, canvas.width, canvas.height).data;
-
-    for (let y = 0; y < canvas.height; y += 6) {
-        for (let x = 0; x < canvas.width; x += 6) {
-            const index = (y * canvas.width + x) * 4;
-            if (data[index + 3] > 150) {
-                textParticles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    tx: x,
-                    ty: y
-                });
-            }
-        }
-    }
-}
-
-createText();
 
 /* ANIMATION */
 function animate() {
@@ -258,32 +227,7 @@ function animate() {
         ctx.fill();
     });
 
-    /* TEXT FORMATION */
-    textParticles.forEach(tp => {
-        let dx = tp.tx - tp.x;
-        let dy = tp.ty - tp.y;
-
-        tp.x += dx * 0.05;
-        tp.y += dy * 0.05;
-
-        /* MOUSE REPEL */
-        if (mouse.x && mouse.y) {
-            let mx = tp.x - mouse.x;
-            let my = tp.y - mouse.y;
-            let dist = Math.sqrt(mx * mx + my * my);
-
-            if (dist < 80) {
-                tp.x += mx * 0.1;
-                tp.y += my * 0.1;
-            }
-        }
-
-        ctx.beginPath();
-        ctx.arc(tp.x, tp.y, 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = "#00d2ff";
-        ctx.fill();
-    });
-
+    
     /* CONNECTION LINES */
     for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -310,8 +254,6 @@ animate();
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    textParticles = [];
-    createText();
 });
 </script>
     <script>
